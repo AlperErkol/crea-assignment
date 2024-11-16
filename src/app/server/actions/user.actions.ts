@@ -1,9 +1,9 @@
 "use server";
 
 import { z } from "zod";
-import { LoginSchema } from "../utils/schemas";
+import { LoginSchema } from "../../utils/schemas";
 import { AuthError } from "next-auth";
-import { LOGIN_REDIRECT } from "../utils/routes";
+import { LOGIN_REDIRECT } from "../../utils/routes";
 import { signIn } from "@/auth";
 
 export async function login(values: z.infer<typeof LoginSchema>) {

@@ -24,7 +24,7 @@ import {
 } from "./ui/form";
 import AuthenticationError from "./authentication-error";
 import { LoginSchema } from "../utils/schemas";
-import { login } from "../actions/user.actions";
+import { login } from "../server/actions/user.actions";
 import { LoaderButton } from "./loader-button";
 
 const AuthenticationForm = () => {
