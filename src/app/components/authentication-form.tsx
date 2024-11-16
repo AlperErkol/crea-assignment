@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
@@ -25,8 +25,15 @@ import {
 import AuthenticationError from "./authentication-error";
 import { LoginSchema } from "../utils/schemas";
 import { login } from "../actions/user.actions";
+import { LoaderButton } from "./loader-button";
 
 const AuthenticationForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState({
+    state: false,
+    message: "",
+  });
+
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -35,8 +42,24 @@ const AuthenticationForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof LoginSchema>) => {
-    login(values);
+  const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
+    try {
+      setIsLoading(true);
+      const result = await login(values);
+      if (result?.error) {
+        setError({
+          state: true,
+          message: result.error,
+        });
+      }
+    } catch (error: any) {
+      setError({
+        state: true,
+        message: error.message as string,
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -75,10 +98,16 @@ const AuthenticationForm = () => {
                 </FormItem>
               )}
             />
-            <AuthenticationError message="Invalid credentails!" />
+            {error.state && <AuthenticationError message={error.message} />}
           </CardContent>
           <CardFooter className="flex justify-between">
-            <Button>Log In</Button>
+            <LoaderButton
+              isLoading={isLoading}
+              className="w-full"
+              type="submit"
+            >
+              Log In
+            </LoaderButton>
           </CardFooter>
         </form>
       </Form>
