@@ -18,7 +18,6 @@ import { Button } from "../ui/button";
 import { X } from "lucide-react";
 import { LoaderButton } from "../loader-button";
 import { ReviewDto } from "@/app/product/[productId]/page";
-import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
 import ReviewStarRating from "../review-start-rating";
 
 interface AddReviewProps {
@@ -36,14 +35,18 @@ const AddReview: React.FC<AddReviewProps> = ({
       reviewerName: "",
       reviewerMail: "",
       comment: "",
-      rating: "",
       date: new Date(),
+      rating: "0",
     },
   });
 
   const onSubmit = async (values: z.infer<typeof ReviewSchema>) => {
-    console.log(values);
-    setReviews((currentReviews: ReviewDto[]) => [...currentReviews, values]);
+    const newReview = {
+      ...values,
+      rating: Number(values.rating),
+    };
+
+    setReviews((currentReviews: ReviewDto[]) => [...currentReviews, newReview]);
     setIsAddingReview(false);
   };
 
