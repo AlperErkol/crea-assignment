@@ -10,4 +10,11 @@ const LoginSchema = z.object({
   password: z.string().min(6).max(50),
 });
 
-export { LoginSchema };
+const ReviewSchema = z.object({
+  reviewerName: z.string().min(2).max(50),
+  reviewerMail: z.string().email().min(5),
+  comment: z.string(),
+  rating: z.string(),
+  date: z.date(),
+});
+export { LoginSchema, ReviewSchema };
