@@ -42,6 +42,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
     >
       {imageSources.map((imageSource, index: number) => (
         <Image
+          key={`image-carousel-${index}`}
           data-testid={`image-carousel-data`}
           width={width}
           height={height}

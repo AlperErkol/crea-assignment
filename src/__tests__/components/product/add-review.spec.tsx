@@ -1,6 +1,7 @@
 import AddReview from "@/components/product/add-review";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import React from "react";
 
 jest.mock("@/components/review-star-rating", () => ({
   __esModule: true,
@@ -8,9 +9,13 @@ jest.mock("@/components/review-star-rating", () => ({
 }));
 
 jest.mock("@/components/loader-button", () => ({
-  LoaderButton: ({ isLoading, children }: any) => (
-    <button>{isLoading ? "Loading..." : children}</button>
-  ),
+  LoaderButton: ({
+    isLoading,
+    children,
+  }: {
+    isLoading: boolean;
+    children: React.ReactNode;
+  }) => <button>{isLoading ? "Loading..." : children}</button>,
 }));
 
 describe("AddReview", () => {

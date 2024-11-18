@@ -7,12 +7,12 @@ import ProductReviewCard from "./product-review-card";
 import StarRating from "./star-rating";
 import _ from "lodash";
 import { calculateAverageRating } from "@/app/product/[productId]/util";
-import { ReviewDto } from "@/app/product/[productId]/page";
+import { ReviewDto } from "@/types";
 
 interface ProductReviewsProps {
   rating: number;
   reviews: ReviewDto[];
-  setReviews: any;
+  setReviews: React.Dispatch<React.SetStateAction<ReviewDto[]>>;
 }
 
 const ProductReviews: React.FC<ProductReviewsProps> = ({
@@ -35,8 +35,8 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({
         </ProductReviewCard>
       </div>
       <div className="flex flex-col gap-2">
-        {sortedReviews.map((review: ReviewDto) => (
-          <ReviewItem {...review} />
+        {sortedReviews.map((review: ReviewDto, index: number) => (
+          <ReviewItem key={`review-item-${index}`} {...review} />
         ))}
         {isAddingReview && (
           <AddReview

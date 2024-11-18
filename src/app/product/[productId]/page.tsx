@@ -5,17 +5,9 @@ import Loading from "@/components/loading";
 import ProductDetail from "@/components/product/product-detail";
 import ProductReviews from "@/components/product/product-reviews";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ReviewDto } from "@/types";
 import { useQuery } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
-
-export type ReviewDto = {
-  rating: number;
-  comment: string;
-  date: string;
-  reviewerName: string;
-  reviewerEmail: string;
-  reviewViaWeb: boolean;
-};
 
 const page = ({ params }: any) => {
   const [reviews, setReviews] = useState<ReviewDto[]>([]);

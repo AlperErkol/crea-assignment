@@ -18,11 +18,11 @@ import { Button } from "../ui/button";
 import { X } from "lucide-react";
 import { LoaderButton } from "../loader-button";
 import ReviewStarRating from "../review-star-rating";
-import { ReviewDto } from "@/app/product/[productId]/page";
+import { ReviewDto } from "@/types";
 
 interface AddReviewProps {
-  setIsAddingReview: any;
-  setReviews: any;
+  setIsAddingReview: React.Dispatch<React.SetStateAction<boolean>>;
+  setReviews: React.Dispatch<React.SetStateAction<any>>;
 }
 
 const AddReview: React.FC<AddReviewProps> = ({

@@ -3,10 +3,10 @@ import React from "react";
 import StarRating from "./star-rating";
 import ImageCarousel from "../carousel/image-carousel";
 import { calculateAverageRating } from "@/app/product/[productId]/util";
-import { ReviewDto } from "@/app/product/[productId]/page";
+import { ProductDetailDto, ReviewDto } from "@/types";
 
 interface ProductDetailProps {
-  data: any;
+  data: ProductDetailDto;
   reviews: ReviewDto[];
 }
 

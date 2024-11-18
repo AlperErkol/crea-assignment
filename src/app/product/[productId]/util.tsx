@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import { ReviewDto } from "./page";
 import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
 import { env } from "@/libs/env";
+import { ReviewDto } from "@/types";
 
 const calculateAverageRating = (
   rating: number,

@@ -1,15 +1,15 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { calculateAverageRating } from "@/app/product/[productId]/util";
-import { ReviewDto } from "@/app/product/[productId]/page";
 import ProductReviews from "@/components/product/product-reviews";
 import "@testing-library/jest-dom";
+import { ReviewDto } from "@/types";
 
 jest.mock("@/components/product/review-item", () =>
   jest.fn(() => <div data-testid="review-item">Review Item</div>)
 );
 jest.mock("@/components/product/add-review", () =>
-  jest.fn(({ setIsAddingReview }: any) => (
+  jest.fn(({ setIsAddingReview }) => (
     <div data-testid="add-review">
       Add Review
       <button onClick={() => setIsAddingReview(false)}>Cancel</button>
@@ -17,16 +17,14 @@ jest.mock("@/components/product/add-review", () =>
   ))
 );
 jest.mock("@/components/product/product-review-card", () =>
-  jest.fn(({ title, children }: any) => (
+  jest.fn(({ title, children }) => (
     <div data-testid="product-review-card">
       {title} {children}
     </div>
   ))
 );
 jest.mock("@/components/product/star-rating", () =>
-  jest.fn(({ rating }: any) => (
-    <div data-testid="star-rating">Rating: {rating}</div>
-  ))
+  jest.fn(({ rating }) => <div data-testid="star-rating">Rating: {rating}</div>)
 );
 jest.mock("@/app/product/[productId]/util", () => ({
   calculateAverageRating: jest.fn(),
