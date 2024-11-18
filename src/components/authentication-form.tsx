@@ -66,7 +66,7 @@ const AuthenticationForm = () => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader>
-            <CardTitle>Log In</CardTitle>
+            <CardTitle data-testid="card-title-login">Log In</CardTitle>
           </CardHeader>
           <CardContent>
             <FormField
@@ -104,6 +104,7 @@ const AuthenticationForm = () => {
               isLoading={isLoading}
               className="w-full"
               type="submit"
+              data-testid="authentication-form-submit-button"
             >
               Log In
             </LoaderButton>

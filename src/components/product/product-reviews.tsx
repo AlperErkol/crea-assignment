@@ -25,7 +25,7 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({
   const calculatedRating = calculateAverageRating(rating, reviews);
 
   return (
-    <div>
+    <div data-testid="product-reviews">
       <div className="flex mb-2 gap-2">
         <ProductReviewCard title="Average Rating" icon={<Star />}>
           <StarRating rating={calculatedRating} iconSize={24} showDigit />

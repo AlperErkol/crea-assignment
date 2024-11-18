@@ -17,7 +17,7 @@ import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import { X } from "lucide-react";
 import { LoaderButton } from "../loader-button";
-import ReviewStarRating from "../review-start-rating";
+import ReviewStarRating from "../review-star-rating";
 import { ReviewDto } from "@/app/product/[productId]/page";
 
 interface AddReviewProps {
@@ -51,7 +51,7 @@ const AddReview: React.FC<AddReviewProps> = ({
   };
 
   return (
-    <div>
+    <div data-testid="add-review-form">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="flex gap-6 p-3 border rounded-md">

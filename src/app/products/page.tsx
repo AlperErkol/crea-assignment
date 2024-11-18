@@ -16,7 +16,9 @@ const page = () => {
   }
 
   return (
-    <div>{data && <DataTable columns={columns} data={data.products} />}</div>
+    <div data-testid="product-list">
+      {data && <DataTable columns={columns} data={data.products} />}
+    </div>
   );
 };
 

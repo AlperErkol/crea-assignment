@@ -36,9 +36,13 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
   };
 
   return (
-    <div className={`carousel relative w-[${width}px] h-[${height}px]`}>
+    <div
+      data-testid="image-carousel"
+      className={`carousel relative w-[${width}px] h-[${height}px]`}
+    >
       {imageSources.map((imageSource, index: number) => (
         <Image
+          data-testid={`image-carousel-data`}
           width={width}
           height={height}
           src={imageSource}
@@ -49,6 +53,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
         />
       ))}
       <Button
+        data-testid="image-carousel-left"
         variant="outline"
         size="icon"
         onClick={goPrevImage}
@@ -58,6 +63,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
         <ChevronLeft />
       </Button>
       <Button
+        data-testid="image-carousel-right"
         variant="outline"
         size="icon"
         className="carousel-btn right-4"

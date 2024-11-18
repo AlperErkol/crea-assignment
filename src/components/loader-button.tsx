@@ -10,6 +10,7 @@ export function LoaderButton({
 }: ButtonProps & { isLoading: boolean }) {
   return (
     <Button
+      data-testid="loader-button"
       disabled={isLoading}
       type="submit"
       {...props}

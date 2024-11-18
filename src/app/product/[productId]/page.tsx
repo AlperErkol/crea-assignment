@@ -42,10 +42,18 @@ const page = ({ params }: any) => {
   return (
     <Tabs defaultValue="product-detail">
       <TabsList className="w-full">
-        <TabsTrigger className="flex-1" value="product-detail">
+        <TabsTrigger
+          data-testid="tab-product-detail"
+          className="flex-1"
+          value="product-detail"
+        >
           Product Detail
         </TabsTrigger>
-        <TabsTrigger className="flex-1" value="product-comments-reviews">
+        <TabsTrigger
+          data-testid="tab-product-review"
+          className="flex-1"
+          value="product-comments-reviews"
+        >
           Comments & Reviews ({reviews.length})
         </TabsTrigger>
       </TabsList>

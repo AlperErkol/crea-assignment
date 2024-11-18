@@ -1,7 +1,6 @@
 "use server";
 
 import { z } from "zod";
-import { AuthError } from "next-auth";
 import { signIn } from "@/auth";
 import { LOGIN_REDIRECT } from "@/utils/routes";
 import { LoginSchema } from "@/utils/schemas";
@@ -19,7 +18,7 @@ export async function login(values: z.infer<typeof LoginSchema>) {
       redirectTo: LOGIN_REDIRECT,
     });
   } catch (error: any) {
-    if (error instanceof AuthError) {
+    if (error && error.type) {
       switch (error.type) {
         case "CredentialsSignin":
           return { error: "Invalid credentails!" };
