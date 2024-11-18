@@ -22,9 +22,7 @@ export const columns: ColumnDef<ProductTableDto>[] = [
           className="w-[60px] h-[60px]"
           width={60}
           height={60}
-          alt={
-            productName + "is displayed in crea assignment product list page."
-          }
+          alt={`${productName} is displayed in crea assignment product list page.`}
         />
       );
     },

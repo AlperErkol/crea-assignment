@@ -18,7 +18,7 @@ export async function login(values: z.infer<typeof LoginSchema>) {
       redirectTo: LOGIN_REDIRECT,
     });
   } catch (error: any) {
-    if (error && error.type) {
+    if (error?.type) {
       switch (error.type) {
         case "CredentialsSignin":
           return { error: "Invalid credentails!" };

@@ -12,7 +12,9 @@ jest.mock("@/components/product/add-review", () =>
   jest.fn(({ setIsAddingReview }) => (
     <div data-testid="add-review">
       Add Review
-      <button onClick={() => setIsAddingReview(false)}>Cancel</button>
+      <button type="button" onClick={() => setIsAddingReview(false)}>
+        Cancel
+      </button>
     </div>
   ))
 );
