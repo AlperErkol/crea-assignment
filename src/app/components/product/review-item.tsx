@@ -9,7 +9,7 @@ const ReviewItem = (review: ReviewDto) => {
   return (
     <div className="border p-3 rounded-md">
       <div className="flex items-center justify-between">
-        <StarRating rating={rating} />
+        <StarRating rating={rating} showDigit />
         <p>{moment(date).fromNow()}</p>
       </div>
       <div>{reviewerName}</div>

@@ -14,7 +14,9 @@ export default auth((req: any) => {
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;
   const isAuthRoute = AUTH_ROUTE.includes(nextUrl.pathname);
-  const isProtectedRoute = PROTECTED_ROUTES.includes(nextUrl.pathname);
+  const isProtectedRoute = PROTECTED_ROUTES.some((route: string) =>
+    nextUrl.pathname.startsWith(route)
+  );
 
   if (isAuthRoute) {
     if (isLoggedIn) {

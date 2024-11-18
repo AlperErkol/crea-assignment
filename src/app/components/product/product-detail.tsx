@@ -22,7 +22,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ data }) => {
           <h1 className="text-2xl font-bold mb-2">{title}</h1>
           <div className="text-2xl font-bold mb-2">${price}</div>
           <p className="mb-2">{description}</p>
-          <StarRating rating={rating} iconSize={24} />
+          <StarRating rating={rating} iconSize={24} showDigit />
           <p className="text-sm font-semibold mt-2">
             Arrival Date: {moment(arrivalDate).format("MM/DD/YYYY")}
           </p>

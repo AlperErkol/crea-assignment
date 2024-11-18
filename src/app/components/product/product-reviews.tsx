@@ -22,7 +22,7 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({
     <div>
       <div className="p-3 border mb-2">
         <span className="font-semibold">Average Rating</span>
-        <StarRating rating={averageRating} />
+        <StarRating rating={averageRating} showDigit />
       </div>
       <div className="flex flex-col gap-2">
         {reviews.map((review: ReviewDto) => (

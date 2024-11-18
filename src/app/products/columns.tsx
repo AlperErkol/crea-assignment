@@ -1,5 +1,6 @@
 import { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
+import StarRating from "../components/product/star-rating";
 
 type ProductTableDto = {
   thumbnail: string;
@@ -42,5 +43,8 @@ export const columns: ColumnDef<ProductTableDto>[] = [
   {
     accessorKey: "rating",
     header: "Rating",
+    cell: ({ row }: any) => {
+      return <StarRating rating={row.getValue("rating")} />;
+    },
   },
 ];
