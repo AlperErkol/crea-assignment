@@ -14,7 +14,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ data }) => {
   return (
     <div className="product-detail">
       <div className="product-detail-header w-full flex gap-2">
-        <ImageCarousel imageSources={images} width={300} height={300} />
+        <ImageCarousel imageSources={images} width={500} height={450} />
         <div className="product-detail-header-meta flex-1 h-[450px]">
           <span className="text-sm font-semibold">
             {category.toUpperCase()}

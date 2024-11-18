@@ -16,11 +16,11 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
   width,
   height,
 }) => {
-  let maxImageCount = 5;
+  let imageCount = imageSources.length;
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const goNextImage = () => {
-    if (currentIndex === maxImageCount - 1) {
+    if (currentIndex === imageCount - 1) {
       setCurrentIndex(0);
       return;
     }
@@ -29,21 +29,21 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
 
   const goPrevImage = () => {
     if (currentIndex === 0) {
-      setCurrentIndex(maxImageCount - 1);
+      setCurrentIndex(imageCount - 1);
       return;
     }
     setCurrentIndex((prevIndex) => prevIndex - 1);
   };
 
   return (
-    <div className="carousel relative flex-1 h-[450px]">
+    <div className={`carousel relative w-[${width}px] h-[${height}px]`}>
       {imageSources.map((imageSource, index: number) => (
         <Image
           width={width}
           height={height}
           src={imageSource}
           alt=""
-          className={classnames("carousel-image", {
+          className={classnames("carousel-image object-contain", {
             active: currentIndex === index,
           })}
         />
@@ -53,7 +53,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
         size="icon"
         onClick={goPrevImage}
         className="carousel-btn left-4"
-        disabled={imageSources.length === 1}
+        disabled={imageCount === 1}
       >
         <ChevronLeft />
       </Button>
@@ -62,7 +62,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
         size="icon"
         className="carousel-btn right-4"
         onClick={goNextImage}
-        disabled={imageSources.length === 1}
+        disabled={imageCount === 1}
       >
         <ChevronRight />
       </Button>
