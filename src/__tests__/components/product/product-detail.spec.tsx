@@ -4,7 +4,7 @@ import { calculateAverageRating } from "@/app/product/[productId]/util";
 import moment from "moment";
 import ProductDetail from "@/components/product/product-detail";
 import "@testing-library/jest-dom";
-import { ReviewDto } from "@/types";
+import type { ReviewDto } from "@/types";
 
 jest.mock("@/components/product/star-rating", () =>
   jest.fn(() => <div data-testid="star-rating">Star Rating</div>)

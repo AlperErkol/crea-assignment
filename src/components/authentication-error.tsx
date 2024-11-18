@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import { TriangleAlert } from "lucide-react";
 
 interface IProps {

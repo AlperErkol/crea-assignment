@@ -1,7 +1,7 @@
 import AddReview from "@/components/product/add-review";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import React from "react";
+import type React from "react";
 
 jest.mock("@/components/review-star-rating", () => ({
   __esModule: true,

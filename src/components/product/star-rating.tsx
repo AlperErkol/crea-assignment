@@ -2,7 +2,7 @@ import {
   formatRating,
   generateStarFromRating,
 } from "@/app/product/[productId]/util";
-import React from "react";
+import type React from "react";
 import {
   Tooltip,
   TooltipContent,
@@ -27,14 +27,14 @@ const StarRating: React.FC<StarRatingProps> = ({
 
   return (
     <div className="flex items-center">
-      <TooltipProvider>
+      <TooltipProvider delayDuration={100}>
         <Tooltip>
           <TooltipTrigger asChild>
             <div className="flex">{stars.map((star) => star)}</div>
           </TooltipTrigger>
           <TooltipContent>
             <p>
-              {formatRating(rating)} / ${env.NEXT_PUBLIC_RATE_MAX_VALUE}
+              {formatRating(rating)} / {env.NEXT_PUBLIC_RATE_MAX_VALUE}
             </p>
           </TooltipContent>
         </Tooltip>

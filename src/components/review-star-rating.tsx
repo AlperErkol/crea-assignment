@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { FormControl, FormItem, FormLabel } from "./ui/form";
 import { IoStar, IoStarOutline } from "react-icons/io5";
-import { ControllerRenderProps } from "react-hook-form";
+import type { ControllerRenderProps } from "react-hook-form";
 import { env } from "@/libs/env";
 
 interface ReviewStarRatingProps {

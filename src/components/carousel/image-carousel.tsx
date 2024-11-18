@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import classnames from "classnames";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -16,7 +17,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
   width,
   height,
 }) => {
-  let imageCount = imageSources.length;
+  const imageCount = imageSources.length;
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const goNextImage = () => {

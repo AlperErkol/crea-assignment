@@ -1,8 +1,8 @@
 import { ReviewSchema } from "@/utils/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
-import React from "react";
+import type React from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import type { z } from "zod";
 import {
   Form,
   FormControl,
@@ -18,7 +18,7 @@ import { Button } from "../ui/button";
 import { X } from "lucide-react";
 import { LoaderButton } from "../loader-button";
 import ReviewStarRating from "../review-star-rating";
-import { ReviewDto } from "@/types";
+import type { ReviewDto } from "@/types";
 
 interface AddReviewProps {
   setIsAddingReview: React.Dispatch<React.SetStateAction<boolean>>;

@@ -1,7 +1,7 @@
 import React from "react";
 import StarRating from "./star-rating";
 import moment from "moment";
-import { ReviewDto } from "@/types";
+import type { ReviewDto } from "@/types";
 
 const ReviewItem = (review: ReviewDto) => {
   const { rating, reviewerName, comment, date } = review;

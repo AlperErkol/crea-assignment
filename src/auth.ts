@@ -1,4 +1,4 @@
-import NextAuth, { User } from "next-auth";
+import NextAuth, { type User } from "next-auth";
 import { encode as defaultEncode } from "next-auth/jwt";
 import Credentials from "next-auth/providers/credentials";
 import { v4 as uuid } from "uuid";

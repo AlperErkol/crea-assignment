@@ -1,9 +1,10 @@
 import React from "react";
 
 import {
-  ColumnDef,
+  type ColumnDef,
   flexRender,
   getCoreRowModel,
+  getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import {
@@ -31,6 +32,7 @@ const DataTable = <TData, TValue>({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
   });
 
   const handleRowOnClick = (row: any) => {
@@ -93,6 +95,10 @@ const DataTable = <TData, TValue>({
         </Table>
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
+        <div className="flex-1 text-sm text-muted-foreground">
+          {table.getPaginationRowModel().rows.length} of{" "}
+          {table.getFilteredRowModel().rows.length} row(s) are displaying.
+        </div>
         <div className="space-x-2">
           <Button
             variant="outline"

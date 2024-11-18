@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { calculateAverageRating } from "@/app/product/[productId]/util";
 import ProductReviews from "@/components/product/product-reviews";
 import "@testing-library/jest-dom";
-import { ReviewDto } from "@/types";
+import type { ReviewDto } from "@/types";
 
 jest.mock("@/components/product/review-item", () =>
   jest.fn(() => <div data-testid="review-item">Review Item</div>)

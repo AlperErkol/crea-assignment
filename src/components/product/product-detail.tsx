@@ -1,9 +1,9 @@
 import moment from "moment";
-import React from "react";
+import type React from "react";
 import StarRating from "./star-rating";
 import ImageCarousel from "../carousel/image-carousel";
 import { calculateAverageRating } from "@/app/product/[productId]/util";
-import { ProductDetailDto, ReviewDto } from "@/types";
+import type { ProductDetailDto, ReviewDto } from "@/types";
 
 interface ProductDetailProps {
   data: ProductDetailDto;

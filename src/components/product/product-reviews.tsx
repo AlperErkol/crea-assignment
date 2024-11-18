@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import ReviewItem from "./review-item";
 import { Button } from "../ui/button";
 import { MessageSquare, Plus, Star } from "lucide-react";
@@ -7,7 +8,7 @@ import ProductReviewCard from "./product-review-card";
 import StarRating from "./star-rating";
 import _ from "lodash";
 import { calculateAverageRating } from "@/app/product/[productId]/util";
-import { ReviewDto } from "@/types";
+import type { ReviewDto } from "@/types";
 
 interface ProductReviewsProps {
   rating: number;

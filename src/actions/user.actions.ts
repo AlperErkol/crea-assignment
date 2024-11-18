@@ -1,6 +1,6 @@
 "use server";
 
-import { z } from "zod";
+import type { z } from "zod";
 import { signIn } from "@/auth";
 import { LOGIN_REDIRECT } from "@/utils/routes";
 import { LoginSchema } from "@/utils/schemas";
