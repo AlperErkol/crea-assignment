@@ -9,6 +9,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
+import classNames from "classnames";
 
 interface StarRatingProps {
   rating: number;
@@ -36,7 +37,13 @@ const StarRating: React.FC<StarRatingProps> = ({
         </Tooltip>
       </TooltipProvider>
       {showDigit && (
-        <span className="ml-2 font-semibold">{formatRating(rating)}</span>
+        <span
+          className={classNames("ml-2 font-semibold", {
+            "font-bold text-xl": iconSize && iconSize >= 20,
+          })}
+        >
+          {formatRating(rating)}
+        </span>
       )}
     </div>
   );

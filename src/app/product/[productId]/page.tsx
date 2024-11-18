@@ -41,6 +41,8 @@ const page = ({ params }: any) => {
     return <Loading />;
   }
 
+  const { rating } = data;
+
   return (
     <Tabs defaultValue="product-detail">
       <TabsList className="w-full">
@@ -55,7 +57,11 @@ const page = ({ params }: any) => {
         <ProductDetail data={data} />
       </TabsContent>
       <TabsContent value="product-comments-reviews">
-        <ProductReviews setReviews={setReviews} reviews={reviews} />
+        <ProductReviews
+          setReviews={setReviews}
+          reviews={reviews}
+          rating={rating}
+        />
       </TabsContent>
     </Tabs>
   );

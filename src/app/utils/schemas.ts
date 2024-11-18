@@ -15,6 +15,6 @@ const ReviewSchema = z.object({
   reviewerMail: z.string().email().min(5),
   comment: z.string(),
   rating: z.string(),
-  date: z.date(),
+  date: z.string(),
 });
 export { LoginSchema, ReviewSchema };

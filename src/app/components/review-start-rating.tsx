@@ -10,7 +10,7 @@ interface ReviewStarRatingProps {
       rating: string;
       reviewerName: string;
       comment: string;
-      date: Date;
+      date: string;
       reviewerMail: string;
     },
     "rating"

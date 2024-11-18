@@ -30,7 +30,7 @@ const generateStarFromRating = (
 };
 
 const formatRating = (rating: number): string => {
-  return rating % 1 === 0 ? `${rating}` : rating.toFixed(1);
+  return rating % 1 === 0 ? `${rating}` : rating.toFixed(2);
 };
 
 export { calculateAverageRating, generateStarFromRating, formatRating };

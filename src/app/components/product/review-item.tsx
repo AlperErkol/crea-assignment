@@ -12,7 +12,7 @@ const ReviewItem = (review: ReviewDto) => {
         <StarRating rating={rating} showDigit />
         <p>{moment(date).fromNow()}</p>
       </div>
-      <div>{reviewerName}</div>
+      <div className="text-muted-foreground text-sm mb-3">{reviewerName}</div>
       <div>{comment}</div>
     </div>
   );

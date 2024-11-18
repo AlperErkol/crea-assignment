@@ -17,8 +17,8 @@ import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import { X } from "lucide-react";
 import { LoaderButton } from "../loader-button";
-import { ReviewDto } from "@/app/product/[productId]/page";
 import ReviewStarRating from "../review-start-rating";
+import { ReviewDto } from "@/app/product/[productId]/page";
 
 interface AddReviewProps {
   setIsAddingReview: any;
@@ -35,7 +35,7 @@ const AddReview: React.FC<AddReviewProps> = ({
       reviewerName: "",
       reviewerMail: "",
       comment: "",
-      date: new Date(),
+      date: new Date().toISOString(),
       rating: "0",
     },
   });
@@ -45,7 +45,6 @@ const AddReview: React.FC<AddReviewProps> = ({
       ...values,
       rating: Number(values.rating),
     };
-
     setReviews((currentReviews: ReviewDto[]) => [...currentReviews, newReview]);
     setIsAddingReview(false);
   };
