@@ -10,6 +10,7 @@ import {
   TooltipTrigger,
 } from "../ui/tooltip";
 import classNames from "classnames";
+import { env } from "@/libs/env";
 
 interface StarRatingProps {
   rating: number;
@@ -32,7 +33,9 @@ const StarRating: React.FC<StarRatingProps> = ({
             <div className="flex">{stars.map((star) => star)}</div>
           </TooltipTrigger>
           <TooltipContent>
-            <p>{formatRating(rating)} / 5</p>
+            <p>
+              {formatRating(rating)} / ${env.NEXT_PUBLIC_RATE_MAX_VALUE}
+            </p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

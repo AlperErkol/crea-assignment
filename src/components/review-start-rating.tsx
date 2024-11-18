@@ -3,6 +3,7 @@ import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { FormControl, FormItem, FormLabel } from "./ui/form";
 import { IoStar, IoStarOutline } from "react-icons/io5";
 import { ControllerRenderProps } from "react-hook-form";
+import { env } from "@/libs/env";
 
 interface ReviewStarRatingProps {
   field: ControllerRenderProps<
@@ -24,7 +25,7 @@ const ReviewStarRating: React.FC<ReviewStarRatingProps> = ({ field }) => {
 
   return (
     <RadioGroup onValueChange={field.onChange} className="flex space-y-1">
-      {Array.from({ length: 5 }, (_, index) => (
+      {Array.from({ length: env.NEXT_PUBLIC_RATE_MAX_VALUE }, (_, index) => (
         <FormItem key={index} className="flex items-center space-x-3 space-y-0">
           <FormControl>
             <RadioGroupItem className="hidden" value={(index + 1).toString()} />

@@ -1,9 +1,10 @@
 import axios from "axios";
+import { env } from "./env";
 
 // @Instance
 const axiosInstance = axios.create({
-  baseURL: "https://dummyjson.com",
-  timeout: 1000,
+  baseURL: env.NEXT_PUBLIC_BASE_URL,
+  timeout: env.API_REQUEST_TIMEOUT,
 });
 
 // @Interceptors

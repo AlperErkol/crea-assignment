@@ -1,9 +1,10 @@
 "use server";
 import axiosInstance from "@/libs/axiosInstance";
+import { env } from "@/libs/env";
 
 const getProducts = async () => {
   const response = await axiosInstance.get(
-    "/products?limit=10&select=title,price,rating,thumbnail"
+    `/products?limit=${env.NEXT_PUBLIC_PRODUCT_LIMIT}&select=${env.NEXT_PUBLIC_PRODUCT_DISPLAY_FIELDS}`
   );
   return response.data;
 };

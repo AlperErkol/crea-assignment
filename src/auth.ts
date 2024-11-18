@@ -3,6 +3,7 @@ import { encode as defaultEncode } from "next-auth/jwt";
 import Credentials from "next-auth/providers/credentials";
 import { v4 as uuid } from "uuid";
 import { LoginSchema } from "./utils/schemas";
+import { env } from "./libs/env";
 
 const authConfig = {
   providers: [
@@ -11,11 +12,14 @@ const authConfig = {
         const validatedFields = LoginSchema.safeParse(credentials);
         if (validatedFields.success) {
           const { username, password } = validatedFields.data;
-          if (username === "user" && password === "user123") {
+          if (
+            username === env.USER_DEFAULT_USERNAME &&
+            password === env.USER_DEFAULT_PASSWORD
+          ) {
             const user: User = {
-              id: process.env.DEFAULT_USER_ID,
-              name: process.env.DEFAULT_USERNAME,
-              email: process.env.DEFAULT_EMAIL,
+              id: env.USER_DEFAULT_ID,
+              name: env.USER_DEFAULT_USERNAME,
+              email: env.USER_DEFAULT_USERNAME,
             };
             return user;
           }
@@ -56,7 +60,7 @@ const authConfig = {
     },
   },
   session: { strategy: "jwt" as const },
-  secret: process.env.AUTH_SECRET,
+  secret: env.AUTH_SECRET,
 };
 
 export const { handlers, signIn, signOut, auth } = NextAuth(authConfig);
