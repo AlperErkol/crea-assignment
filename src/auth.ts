@@ -2,7 +2,7 @@ import NextAuth, { User } from "next-auth";
 import { encode as defaultEncode } from "next-auth/jwt";
 import Credentials from "next-auth/providers/credentials";
 import { v4 as uuid } from "uuid";
-import { LoginSchema } from "./app/utils/schemas";
+import { LoginSchema } from "./utils/schemas";
 
 const authConfig = {
   providers: [

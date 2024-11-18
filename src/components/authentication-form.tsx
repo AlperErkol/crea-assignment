@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/app/components/ui/card";
+} from "@/components/ui/card";
 import { Input } from "./ui/input";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -22,8 +22,8 @@ import {
   FormMessage,
 } from "./ui/form";
 import AuthenticationError from "./authentication-error";
-import { LoginSchema } from "../utils/schemas";
-import { login } from "../server/actions/user.actions";
+import { LoginSchema } from "@/utils/schemas";
+import { login } from "@/actions/user.actions";
 import { LoaderButton } from "./loader-button";
 
 const AuthenticationForm = () => {

@@ -1,5 +1,5 @@
-import AuthHeader from "@/app/components/auth-header";
-import Wrapper from "@/app/components/wrapper";
+import AuthHeader from "@/components/auth-header";
+import Wrapper from "@/components/wrapper";
 import React from "react";
 
 const layout = ({ children }: { children: React.ReactNode }) => {

@@ -5,7 +5,7 @@ import {
   LOGIN_REDIRECT,
   PROTECTED_ROUTES,
   UNAUTHENTICATED_REDIRECT,
-} from "./app/utils/routes";
+} from "./utils/routes";
 import { authConfig } from "./auth";
 
 const { auth } = NextAuth(authConfig);

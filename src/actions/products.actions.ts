@@ -1,5 +1,5 @@
 "use server";
-import axiosInstance from "@/app/lib/axiosInstance";
+import axiosInstance from "@/libs/axiosInstance";
 
 const getProducts = async () => {
   const response = await axiosInstance.get(

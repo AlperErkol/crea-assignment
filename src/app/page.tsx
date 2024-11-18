@@ -1,4 +1,4 @@
-import AuthenticationForm from "./components/authentication-form";
+import AuthenticationForm from "@/components/authentication-form";
 
 export default function Home() {
   return (

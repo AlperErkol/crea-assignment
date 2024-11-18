@@ -13,8 +13,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../components/ui/table";
-import { Button } from "../components/ui/button";
+} from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 interface DataTableProps<TData, TValue> {

@@ -1,15 +1,10 @@
 "use client";
 
-import Loading from "@/app/components/loading";
-import ProductDetail from "@/app/components/product/product-detail";
-import ProductReviews from "@/app/components/product/product-reviews";
-import {
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-} from "@/app/components/ui/tabs";
-import { getProductById } from "@/app/server/actions/products.actions";
+import { getProductById } from "@/actions/products.actions";
+import Loading from "@/components/loading";
+import ProductDetail from "@/components/product/product-detail";
+import ProductReviews from "@/components/product/product-reviews";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useQuery } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
 

@@ -1,6 +1,6 @@
+import StarRating from "@/components/product/star-rating";
 import { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
-import StarRating from "../components/product/star-rating";
 
 type ProductTableDto = {
   thumbnail: string;
