@@ -15,7 +15,7 @@ jest.mock("@/components/loader-button", () => ({
   }: {
     isLoading: boolean;
     children: React.ReactNode;
-  }) => <button type="button">{isLoading ? "Loading..." : children}</button>,
+  }) => <button>{isLoading ? "Loading..." : children}</button>,
 }));
 
 describe("AddReview", () => {

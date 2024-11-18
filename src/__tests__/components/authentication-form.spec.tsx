@@ -3,7 +3,6 @@ import { login } from "@/actions/user.actions";
 import AuthenticationForm from "@/components/authentication-form";
 import "@testing-library/jest-dom";
 
-// Mock the login function
 jest.mock("@/actions/user.actions", () => ({
   login: jest.fn(),
 }));
@@ -83,26 +82,4 @@ describe("AuthenticationForm", () => {
       })
     );
   });
-
-  //   it("disables submit button when loading", async () => {
-  //     (login as jest.Mock).mockResolvedValueOnce({});
-
-  //     render(<AuthenticationForm />);
-
-  //     fireEvent.change(screen.getByPlaceholderText("user"), {
-  //       target: { value: "testuser" },
-  //     });
-  //     fireEvent.change(screen.getByPlaceholderText("*******"), {
-  //       target: { value: "password123" },
-  //     });
-
-  //     const submitButton = screen.getByTestId(
-  //       "authentication-form-submit-button"
-  //     );
-  //     expect(submitButton).not.toBeDisabled();
-
-  //     fireEvent.click(submitButton);
-
-  //     await waitFor(() => expect(submitButton).toBeDisabled());
-  //   });
 });
