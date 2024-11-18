@@ -1,7 +1,7 @@
 import moment from "moment";
-import Image from "next/image";
 import React from "react";
 import StarRating from "./star-rating";
+import ImageCarousel from "../carousel/image-carousel";
 
 interface ProductDetailProps {
   data: any;
@@ -14,13 +14,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ data }) => {
   return (
     <div className="product-detail">
       <div className="product-detail-header w-full flex gap-2">
-        <Image
-          src={images[0]}
-          alt="alt text"
-          width={300}
-          height={300}
-          className="product-detail-header-image flex-1 h-[450px]"
-        />
+        <ImageCarousel imageSources={images} width={300} height={300} />
         <div className="product-detail-header-meta flex-1 h-[450px]">
           <span className="text-sm font-semibold">
             {category.toUpperCase()}
