@@ -55,21 +55,15 @@ This repository contains a React application for **Crea**, designed to showcase 
    openssl rand -base64 32
    ```
 
-4. Copy and paste your token to .env.local as AUTH_SECRET value
+4. Copy and paste your token to .env file as AUTH_SECRET value
 
    ```bash
    AUTH_SECRET=<YOUR_TOKEN_HERE>
    ```
 
-5. Copy .env.local contents to .env file
-
+5. Install depedencies
    ```bash
-   cp .env.local .env
-   ```
-
-6. Install depedencies
-   ```bash
-   npm run install
+   npm install
    ```
 
 ### Running the Application
