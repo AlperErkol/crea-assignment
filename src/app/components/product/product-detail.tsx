@@ -2,14 +2,18 @@ import moment from "moment";
 import React from "react";
 import StarRating from "./star-rating";
 import ImageCarousel from "../carousel/image-carousel";
+import { calculateAverageRating } from "@/app/product/[productId]/util";
+import { ReviewDto } from "@/app/product/[productId]/page";
 
 interface ProductDetailProps {
   data: any;
+  reviews: ReviewDto[];
 }
 
-const ProductDetail: React.FC<ProductDetailProps> = ({ data }) => {
+const ProductDetail: React.FC<ProductDetailProps> = ({ data, reviews }) => {
   const { category, title, images, price, description, meta, rating } = data;
   const arrivalDate = meta.createdAt;
+  const calculatedRate = calculateAverageRating(rating, reviews);
 
   return (
     <div className="product-detail">
@@ -22,7 +26,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ data }) => {
           <h1 className="text-2xl font-bold mb-2">{title}</h1>
           <div className="text-2xl font-bold mb-2">${price}</div>
           <p className="mb-2">{description}</p>
-          <StarRating rating={rating} iconSize={24} showDigit />
+          <StarRating rating={calculatedRate} iconSize={24} showDigit />
           <p className="text-sm font-semibold mt-2">
             Arrival Date: {moment(arrivalDate).format("MM/DD/YYYY")}
           </p>

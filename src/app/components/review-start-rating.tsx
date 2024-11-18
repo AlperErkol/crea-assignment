@@ -12,6 +12,7 @@ interface ReviewStarRatingProps {
       comment: string;
       date: string;
       reviewerMail: string;
+      reviewViaWeb: boolean;
     },
     "rating"
   >;

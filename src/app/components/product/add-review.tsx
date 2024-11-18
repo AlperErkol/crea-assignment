@@ -37,6 +37,7 @@ const AddReview: React.FC<AddReviewProps> = ({
       comment: "",
       date: new Date().toISOString(),
       rating: "0",
+      reviewViaWeb: true,
     },
   });
 

@@ -16,5 +16,6 @@ const ReviewSchema = z.object({
   comment: z.string(),
   rating: z.string(),
   date: z.string(),
+  reviewViaWeb: z.boolean(),
 });
 export { LoginSchema, ReviewSchema };

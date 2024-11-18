@@ -2,12 +2,21 @@ import { ReactNode } from "react";
 import { ReviewDto } from "./page";
 import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
 
-const calculateAverageRating = (reviews: ReviewDto[]): number => {
-  if (reviews.length === 0) {
-    return 0;
-  }
-  const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
-  return totalRating / reviews.length;
+const calculateAverageRating = (
+  rating: number,
+  reviews: ReviewDto[]
+): number => {
+  const reviewersTotalRating = reviews.reduce(
+    (sum, review) => (review.reviewViaWeb ? sum + review.rating : sum),
+    0
+  );
+
+  const reviewersCount = reviews.filter((review) => review.reviewViaWeb).length;
+
+  const totalRating = rating * 100 + reviewersTotalRating;
+  const totalUsers = 100 + reviewersCount;
+
+  return totalRating / totalUsers;
 };
 
 const generateStarFromRating = (

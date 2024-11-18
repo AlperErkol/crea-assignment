@@ -7,6 +7,7 @@ import AddReview from "./add-review";
 import ProductReviewCard from "./product-review-card";
 import StarRating from "./star-rating";
 import _ from "lodash";
+import { calculateAverageRating } from "@/app/product/[productId]/util";
 
 interface ProductReviewsProps {
   rating: number;
@@ -21,12 +22,13 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({
 }) => {
   const [isAddingReview, setIsAddingReview] = useState<boolean>(false);
   const sortedReviews = _.orderBy(reviews, ["date"], ["desc"]);
+  const calculatedRating = calculateAverageRating(rating, reviews);
 
   return (
     <div>
       <div className="flex mb-2 gap-2">
         <ProductReviewCard title="Average Rating" icon={<Star />}>
-          <StarRating rating={rating} iconSize={24} showDigit />
+          <StarRating rating={calculatedRating} iconSize={24} showDigit />
         </ProductReviewCard>
         <ProductReviewCard title="Total Comments" icon={<MessageSquare />}>
           <span className="font-bold text-xl">{reviews.length}</span>

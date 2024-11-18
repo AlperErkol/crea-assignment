@@ -19,6 +19,7 @@ export type ReviewDto = {
   date: string;
   reviewerName: string;
   reviewerEmail: string;
+  reviewViaWeb: boolean;
 };
 
 const page = ({ params }: any) => {
@@ -54,7 +55,7 @@ const page = ({ params }: any) => {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="product-detail">
-        <ProductDetail data={data} />
+        <ProductDetail data={data} reviews={reviews} />
       </TabsContent>
       <TabsContent value="product-comments-reviews">
         <ProductReviews
