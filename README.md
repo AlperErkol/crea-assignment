@@ -88,3 +88,13 @@ This application uses the following API endpoints from [Dummy JSON](https://dumm
 
 - `GET /products`: Retrieves the list of products.
 - `GET /products/:id`: Retrieves details for a specific product.
+
+## Live Demo
+
+You can visit this [page](https://crea-assignment.vercel.app/) for live demo.
+
+## Assumptions
+
+- There is no database or storage. Adding a review with a rating updates the total comment count and the average rating, but the updates are lost when the page is refreshed.
+- Each product is assumed to have been rated by 100 users.
+- Initially, the code coverage threshold was set to around 80% when I started the project. However, I lowered it to 70% due to time constraints and a busy workload.
